@@ -4,7 +4,7 @@ package binarytree;
  * Created by Antoine Janvier
  * on 04/07/17.
  */
-public class BinaryTree<T> {
+public class BinaryTree<T extends Comparable<T>> {
     BinaryNode<T> root;
 
     public BinaryTree(BinaryNode<T> root) {
@@ -43,6 +43,6 @@ public class BinaryTree<T> {
     }
 
     private boolean isBinarySearchTree(BinaryNode<T> node, BinaryNode<T> min, BinaryNode<T> max) {
-        return false;
+        return node == null || !((min != null && min.value.compareTo(node.value) == 1) || (max != null && max.value.compareTo(node.value) == -1)) && isBinarySearchTree(node.left, min, node) && isBinarySearchTree(node.right, node, max);
     }
 }
