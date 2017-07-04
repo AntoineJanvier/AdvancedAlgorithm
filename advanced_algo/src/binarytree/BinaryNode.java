@@ -8,7 +8,7 @@ public class BinaryNode<T> {
     BinaryNode<T> left;
     BinaryNode<T> right;
 
-    private T value;
+    T value;
 
     BinaryNode(T value) {
         this.value = value;

@@ -5,13 +5,13 @@ package binarytree;
  * on 04/07/17.
  */
 public class BinaryTree<T> {
-    private BinaryNode<T> root;
+    BinaryNode<T> root;
 
     public BinaryTree(BinaryNode<T> root) {
         this.root = root;
     }
 
-    private int getHeight() {
+    int getHeight() {
         return getHeight(root);
     }
 
@@ -26,6 +26,7 @@ public class BinaryTree<T> {
     private int getSize() {
         return getSize(root);
     }
+
     private int getSize(BinaryNode<T> node) {
         if (node == null) return 0;
         return 1 + getSize(node.left) + getSize(node.right);
@@ -35,5 +36,13 @@ public class BinaryTree<T> {
         int height = getHeight();
         int size = getSize();
         return (Math.pow(2, height) - 1 == size);
+    }
+
+    public boolean isBinarySearchTree() {
+        return isBinarySearchTree(root, null, null);
+    }
+
+    private boolean isBinarySearchTree(BinaryNode<T> node, BinaryNode<T> min, BinaryNode<T> max) {
+        return false;
     }
 }
