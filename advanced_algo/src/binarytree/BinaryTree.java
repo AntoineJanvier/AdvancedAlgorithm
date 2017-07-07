@@ -45,4 +45,16 @@ public class BinaryTree<T extends Comparable<T>> {
     private boolean isBinarySearchTree(BinaryNode<T> node, BinaryNode<T> min, BinaryNode<T> max) {
         return node == null || !((min != null && min.value.compareTo(node.value) == 1) || (max != null && max.value.compareTo(node.value) == -1)) && isBinarySearchTree(node.left, min, node) && isBinarySearchTree(node.right, node, max);
     }
+
+    public BinaryNode<T> findLastCommonAncester(T l, T r) {
+        return findLastCommonAncester(root, l, r);
+    }
+    private BinaryNode<T> findLastCommonAncester(BinaryNode<T> node, T l, T r) {
+        if (node == null) return null;
+
+        int compLeft = node.value.compareTo(l);
+        int compRight = node.value.compareTo(r);
+
+
+    }
 }
